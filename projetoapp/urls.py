@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +28,7 @@ urlpatterns = [
     path('clientes/', include('clients.urls', namespace='clients')),
     path('pedidos/', include('orders.urls', namespace='orders')),
     path('itens_pedido/', include('orderitems.urls', namespace='orderitems')),
+    path('token-autenticacao/', obtain_auth_token),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
