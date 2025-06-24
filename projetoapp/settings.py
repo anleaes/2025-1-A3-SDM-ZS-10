@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'socialnetworks.apps.SocialnetworksConfig',
     'clients.apps.ClientsConfig',
+    'orders.apps.OrdersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
